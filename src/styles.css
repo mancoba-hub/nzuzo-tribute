@@ -148,6 +148,26 @@ body {
   font-size: 14px;
 }
 
+.notice-card {
+  margin: 22px auto 0;
+  max-width: 440px;
+}
+
+.notice-card img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.notice-card figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .hero-photo {
   width: 150px;
   height: 150px;

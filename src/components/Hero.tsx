@@ -32,6 +32,12 @@ export default function Hero() {
         <p className="subtitle">{t.subtitle}</p>
         <p className="body">{t.heroBody}</p>
         {TRIBUTE.funeralNote && <p className="funeral-note">🕊️ {TRIBUTE.funeralNote}</p>}
+        {TRIBUTE.noticePhoto && (
+          <figure className="notice-card">
+            <img src={TRIBUTE.noticePhoto} alt={t.noticeCaption} loading="lazy" />
+            <figcaption>{t.noticeCaption}</figcaption>
+          </figure>
+        )}
       </div>
     </section>
   );

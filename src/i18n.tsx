@@ -7,6 +7,7 @@ const STRINGS = {
     topbar: "Qeqe Community Development",
     eyebrow: "In Loving Memory",
     subtitle: "A tribute to a life well lived",
+    noticeCaption: "Funeral Notice",
     heroBody:
       "Qeqe Community Development invites you to share your messages of love, remembrance and comfort for the family of Nzuzo Pukuza. Your tributes will be handed over to the family on the day of the funeral.",
     form: {
@@ -47,6 +48,7 @@ const STRINGS = {
     topbar: "Qeqe Community Development",
     eyebrow: "UKhunjulwa Ngothando",
     subtitle: "Isikhumbuzo sobomi obuphilwe kakuhle",
+    noticeCaption: "Isaziso Somngcwabo",
     heroBody:
       "IQeqe Community Development iyakumema ukuba wabelane ngemiyalezo yothando, yokukhumbula nentuthuzelo nosapho lukaNzuzo Pukuza. Izikhumbuzo zakho ziya kunikezelwa kusapho ngosuku lomngcwabo.",
     form: {

@@ -6,7 +6,7 @@ export const TRIBUTE = {
   name: "Nzuzo Pukuza",
 
   /** Dates shown under the name, e.g. "12 March 1990 – 20 September 2026" */
-  dates: "– 2026",
+  dates: "",
 
   /** Organising community / organisation */
   community: "Qeqe Community Development",
@@ -18,8 +18,15 @@ export const TRIBUTE = {
   heroPhoto: "",
 
   /**
+   * Optional funeral notice image shown on the page (e.g. the official notice
+   * card). Set to "" to hide.
+   */
+  noticePhoto: "/funeral-notice.jpeg",
+
+  /**
    * Optional note about the funeral, e.g.
    * "The funeral will be held on Saturday 10 October 2026." — leave "" to hide.
    */
-  funeralNote: "",
+  funeralNote:
+    "The funeral will be held on Saturday 3 October 2026 at the Pukuza Homestead, Qeqe Location, Dutywa.",
 } as const;
