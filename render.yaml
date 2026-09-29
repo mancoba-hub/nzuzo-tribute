@@ -1,0 +1,18 @@
+# Render deployment blueprint (free tier)
+# See README.md → "Deploying to Render (free)" for full instructions.
+services:
+  - type: web
+    name: nzuzo-tribute
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Render generates a strong random admin password. Find it in the
+      # service's Environment tab after the first deploy.
+      - key: ADMIN_PASSWORD
+        generateValue: true
+        sync: false
