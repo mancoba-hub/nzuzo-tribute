@@ -5,12 +5,12 @@ services:
     name: nzuzo-tribute
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
-      - key: NODE_ENV
-        value: production
+      # NODE_ENV=production is set at runtime by the start script itself.
+      # (Setting it here would make npm ci skip devDependencies and break the build.)
       # Render generates a strong random admin password. Find it in the
       # service's Environment tab after the first deploy.
       - key: ADMIN_PASSWORD
