@@ -8,6 +8,10 @@ const STRINGS = {
     eyebrow: "In Loving Memory",
     subtitle: "A tribute to a life well lived",
     noticeCaption: "Funeral Notice",
+    verse: {
+      text: "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+      ref: "John 11:25",
+    },
     heroBody:
       "Qeqe Community Development invites you to share your messages of love, remembrance and comfort for the family of Nzuzo Pukuza. Your tributes will be handed over to the family on the day of the funeral.",
     form: {
@@ -49,6 +53,10 @@ const STRINGS = {
     eyebrow: "UKhunjulwa Ngothando",
     subtitle: "Isikhumbuzo sobomi obuphilwe kakuhle",
     noticeCaption: "Isaziso Somngcwabo",
+    verse: {
+      text: "Ndim uvuko, ndim ubomi; okholwayo kum, nokuba uthe wafa, uya kudla ubomi.",
+      ref: "Yohane 11:25",
+    },
     heroBody:
       "iQeqe Community Development iyakumema ukuba wabelane ngemiyalezo yothando, yokukhumbula nentuthuzelo nosapho lukaNzuzo Pukuza. Izikhumbuzo zakho ziya kunikezelwa kusapho ngosuku lomngcwabo.",
     form: {

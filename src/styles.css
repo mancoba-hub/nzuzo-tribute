@@ -168,6 +168,28 @@ body {
   color: var(--muted);
 }
 
+.verse {
+  margin: 28px auto 0;
+  max-width: 480px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: var(--gold-bright);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.verse p {
+  margin: 0 0 6px;
+}
+
+.verse cite {
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .hero-photo {
   width: 150px;
   height: 150px;

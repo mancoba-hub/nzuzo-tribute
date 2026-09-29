@@ -38,6 +38,10 @@ export default function Hero() {
             <figcaption>{t.noticeCaption}</figcaption>
           </figure>
         )}
+        <blockquote className="verse">
+          <p>“{t.verse.text}”</p>
+          <cite>— {t.verse.ref}</cite>
+        </blockquote>
       </div>
     </section>
   );
