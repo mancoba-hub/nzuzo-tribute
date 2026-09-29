@@ -50,14 +50,14 @@ const STRINGS = {
     subtitle: "Isikhumbuzo sobomi obuphilwe kakuhle",
     noticeCaption: "Isaziso Somngcwabo",
     heroBody:
-      "IQeqe Community Development iyakumema ukuba wabelane ngemiyalezo yothando, yokukhumbula nentuthuzelo nosapho lukaNzuzo Pukuza. Izikhumbuzo zakho ziya kunikezelwa kusapho ngosuku lomngcwabo.",
+      "iQeqe Community Development iyakumema ukuba wabelane ngemiyalezo yothando, yokukhumbula nentuthuzelo nosapho lukaNzuzo Pukuza. Izikhumbuzo zakho ziya kunikezelwa kusapho ngosuku lomngcwabo.",
     form: {
       title: "Thumela Isikhumbuzo Sakho",
       name: "Igama Lakho",
       namePlaceholder: "umz. uBrown Njemza",
       community: "Uluntu / Umbutho (ukuba uyafuna)",
-      communityPlaceholder: "umz. IQeqe Community Development",
-      contact: "Ifowuni okanye I-imeyile (ukuba uyafuna)",
+      communityPlaceholder: "umz. Qeqe Community Development",
+      contact: "Ifowuni okanye email (ukuba uyafuna)",
       contactPlaceholder: "Ukuze usapho lukwazi ukufikelela kuwe",
       message: "Umyalezo Wakho Wovelwano",
       messagePlaceholder: "Yabelana ngenkumbulo kaNzuzo okanye ngamazwi entuthuzelo kusapho…",
