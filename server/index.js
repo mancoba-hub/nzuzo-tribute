@@ -37,6 +37,16 @@ const upload = multer({
 
 app.use(express.json({ limit: "128kb" }));
 
+// Force secure connections: anyone arriving over HTTP is redirected to HTTPS.
+app.set("trust proxy", true);
+app.use((req, res, next) => {
+  if (req.path !== "/api/health" && req.get("x-forwarded-proto") === "http") {
+    return res.redirect(301, `https://${req.get("host")}${req.originalUrl}`);
+  }
+  res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+  next();
+});
+
 // Photos: served from Cloudflare R2 when configured, otherwise from local disk.
 app.get("/uploads/:name", async (req, res, next) => {
   if (!r2.isConfigured()) return next();
