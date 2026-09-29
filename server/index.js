@@ -6,6 +6,7 @@ const fs = require("fs");
 const archiver = require("archiver");
 const store = require("./store");
 const auth = require("./auth");
+const r2 = require("./cloudflare");
 
 const PORT = Number(process.env.PORT) || 3001;
 const app = express();
@@ -35,6 +36,29 @@ const upload = multer({
 });
 
 app.use(express.json({ limit: "128kb" }));
+
+// Photos: served from Cloudflare R2 when configured, otherwise from local disk.
+app.get("/uploads/:name", async (req, res, next) => {
+  if (!r2.isConfigured()) return next();
+  const name = req.params.name;
+  if (!/^[\w.-]+$/.test(name)) return res.status(400).end();
+  try {
+    const buffer = await r2.getObjectBuffer(`photos/${name}`);
+    const ext = path.extname(name).toLowerCase();
+    const types = {
+      ".jpg": "image/jpeg",
+      ".jpeg": "image/jpeg",
+      ".png": "image/png",
+      ".webp": "image/webp",
+      ".gif": "image/gif",
+    };
+    res.setHeader("Content-Type", types[ext] || "application/octet-stream");
+    res.setHeader("Cache-Control", "public, max-age=604800, immutable");
+    res.end(buffer);
+  } catch {
+    next(); // fall back to local static (or 404)
+  }
+});
 app.use("/uploads", express.static(store.UPLOADS_DIR, { maxAge: "7d", immutable: true }));
 
 const clean = (value, max) => (typeof value === "string" ? value.trim().slice(0, max) : "");
@@ -54,7 +78,7 @@ app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
 // ---- public: submit and list tributes ----
 app.post("/api/tributes", (req, res) => {
-  upload.single("photo")(req, res, (err) => {
+  upload.single("photo")(req, res, async (err) => {
     if (err) {
       const code =
         err.message === "ONLY_IMAGES"
@@ -69,6 +93,21 @@ app.post("/api/tributes", (req, res) => {
     if (!name || !message) {
       return res.status(400).json({ error: "NAME_AND_MESSAGE_REQUIRED" });
     }
+
+    // Move the photo to Cloudflare R2 (permanent storage) when configured.
+    let photoError = false;
+    if (req.file && r2.isConfigured()) {
+      const localPath = path.join(store.UPLOADS_DIR, req.file.filename);
+      try {
+        const buffer = fs.readFileSync(localPath);
+        await r2.putObject(`photos/${req.file.filename}`, buffer, req.file.mimetype);
+        fs.unlinkSync(localPath);
+      } catch (e) {
+        photoError = true;
+        console.error("R2 photo upload failed:", e.message);
+      }
+    }
+
     const tribute = store.addTribute({
       name,
       community: clean(req.body.community, 120) || null,
@@ -76,6 +115,9 @@ app.post("/api/tributes", (req, res) => {
       message,
       photo: req.file ? `/uploads/${req.file.filename}` : null,
     });
+    if (photoError) {
+      return res.status(201).json({ ok: true, tribute: publicTribute(tribute), warning: "PHOTO_UPLOAD_FAILED" });
+    }
     res.status(201).json({ ok: true, tribute: publicTribute(tribute) });
   });
 });
@@ -122,6 +164,9 @@ app.delete("/api/admin/tributes/:id", auth.requireAdmin, (req, res) => {
     } catch {
       // best-effort cleanup
     }
+    if (r2.isConfigured()) {
+      r2.deleteObject(`photos/${path.basename(tribute.photo)}`);
+    }
   }
   res.json({ ok: true });
 });
@@ -143,7 +188,7 @@ app.get("/api/admin/export.csv", auth.requireAdmin, (_req, res) => {
   res.send("\uFEFF" + csv);
 });
 
-app.get("/api/admin/export.zip", auth.requireAdmin, (_req, res) => {
+app.get("/api/admin/export.zip", auth.requireAdmin, async (_req, res) => {
   const archive = archiver("zip", { zlib: { level: 9 } });
   archive.on("error", () => res.destroy());
   res.setHeader("Content-Type", "application/zip");
@@ -152,12 +197,21 @@ app.get("/api/admin/export.zip", auth.requireAdmin, (_req, res) => {
   let count = 0;
   for (const t of store.readAll()) {
     if (!t.photo) continue;
-    const file = path.join(store.UPLOADS_DIR, path.basename(t.photo));
-    if (!fs.existsSync(file)) continue;
+    const basename = path.basename(t.photo);
     const safe =
-      `${String(t.name).replace(/[^\w -]/g, "").trim().slice(0, 40) || "tribute"}-${t.id.slice(0, 6)}${path.extname(file)}`;
-    archive.file(file, { name: safe });
-    count++;
+      `${String(t.name).replace(/[^\w -]/g, "").trim().slice(0, 40) || "tribute"}-${t.id.slice(0, 6)}${path.extname(basename)}`;
+    try {
+      if (r2.isConfigured()) {
+        const buffer = await r2.getObjectBuffer(`photos/${basename}`);
+        archive.append(buffer, { name: safe });
+      } else {
+        const file = path.join(store.UPLOADS_DIR, basename);
+        if (fs.existsSync(file)) archive.file(file, { name: safe });
+      }
+      count++;
+    } catch {
+      // skip missing photo
+    }
   }
   if (count === 0) archive.append("No photos have been submitted yet.", { name: "README.txt" });
   archive.finalize();
@@ -170,6 +224,10 @@ if (process.env.NODE_ENV === "production" && fs.existsSync(dist)) {
   app.get(/^(?!\/(api|uploads)).*/, (_req, res) => res.sendFile(path.join(dist, "index.html")));
 }
 
-app.listen(PORT, () => {
-  console.log(`Nzuzo Tribute server running on http://localhost:${PORT}`);
+// Restore tributes from Cloudflare R2 (when configured) before accepting traffic.
+store.init().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Nzuzo Tribute server running on http://localhost:${PORT}`);
+    console.log(r2.isConfigured() ? "Storage: Cloudflare R2 (permanent)" : "Storage: local disk (not permanent)");
+  });
 });

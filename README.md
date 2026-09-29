@@ -101,6 +101,40 @@ free HTTPS link like `https://nzuzo-tribute.onrender.com` to share with the comm
 - For a permanently-on free alternative with persistent storage, see
   "Oracle Cloud (free forever)" below.
 
+## Permanent storage with Cloudflare R2 (free) ✅ recommended
+
+On Render's free plan the server's own disk is wiped on every deploy/restart/sleep.
+Cloudflare R2 gives you **10 GB of permanent, free storage**, so tributes and photos
+survive redeploys forever. The app uses it automatically once configured.
+
+### Set up R2 (~10 minutes, no card needed)
+
+1. Create an account at [dash.cloudflare.com](https://dash.cloudflare.com) (free).
+2. Left menu → **R2 Object Storage** → **Create bucket** → name it `nzuzo-tribute`.
+   (Keep the bucket private — the app serves the photos itself.)
+3. R2 → **Manage R2 API Tokens** → **Create API token**:
+   - Permission: **Object Read & Write**
+   - Scope: only the `nzuzo-tribute` bucket
+   - Note the **Access Key ID** and **Secret Access Key** (shown once!)
+4. Note your **Account ID** (right side of the R2 page, or bottom-left → Account).
+5. In the **Render dashboard** → your service → **Environment** → add these
+   variables and then click **Deploy** (or just restart):
+
+   | Variable            | Value                    |
+   | ------------------- | ------------------------ |
+   | `R2_ACCOUNT_ID`     | your Cloudflare Account ID |
+   | `R2_ACCESS_KEY_ID`  | the token Access Key ID  |
+   | `R2_SECRET_ACCESS_KEY` | the token Secret      |
+   | `R2_BUCKET`         | `nzuzo-tribute`          |
+
+6. After the restart, open the site, send a test tribute with a photo, then check
+   the server **Logs** tab for `Storage: Cloudflare R2 (permanent)`.
+7. To confirm permanence: **Manual deploy → Restart service**, then check that the
+   tribute is still on the wall. 🎉
+
+The keep-alive ping from cron-job.org (below) is still worth setting up so the free
+service doesn't sleep and take ~1 minute to wake up.
+
 ## Sharing with the community
 
 The community opens the app with a normal link in any phone browser —
