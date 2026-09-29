@@ -15,4 +15,3 @@ services:
       # service's Environment tab after the first deploy.
       - key: ADMIN_PASSWORD
         generateValue: true
-        sync: false
