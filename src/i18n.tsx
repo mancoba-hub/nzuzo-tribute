@@ -39,7 +39,7 @@ const STRINGS = {
       handover:
         "These tributes will be handed over to the family of Nzuzo Pukuza on the day of the funeral.",
       organised: "Organised by Qeqe Community Development",
-      rest: "Rest in Peace, Nzuzo.",
+      rest: "Rest in Peace, Dlamini.",
       admin: "Admin",
     },
     langSwitch: "isiXhosa",
@@ -80,7 +80,7 @@ const STRINGS = {
       handover:
         "Ezi zikhumbuzo ziya kunikezelwa kusapho lukaNzuzo Pukuza ngosuku lomngcwabo.",
       organised: "Iququzelelwa yiQeqe Community Development",
-      rest: "Lala ngoxolo, Nzuzo.",
+      rest: "Lala ngoxolo, Dlamini.",
       admin: "Admin",
     },
     langSwitch: "English",
