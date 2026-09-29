@@ -1,6 +1,7 @@
-// Simple service worker: caches the app shell so the page opens fast
-// (and offline once visited). API and photo requests always go to the network.
-const CACHE = "nzuzo-tribute-v1";
+// Service worker: keeps the app usable offline, but always checks the network
+// first for page loads so updates appear immediately.
+// API and photo requests always go straight to the network.
+const CACHE = "nzuzo-tribute-v2";
 const ASSETS = ["/", "/index.html", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
@@ -26,6 +27,23 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   if (url.pathname.startsWith("/api") || url.pathname.startsWith("/uploads")) return;
 
+  // Page loads: network first, so new versions appear straight away.
+  // Falls back to the cached page only when offline.
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((res) => {
+          const clone = res.clone();
+          caches.open(CACHE).then((cache) => cache.put("/index.html", clone));
+          return res;
+        })
+        .catch(() => caches.match("/index.html"))
+    );
+    return;
+  }
+
+  // Other assets (JS/CSS bundles): cache first. Each build has unique
+  // hashed file names, so cached copies are always the right ones.
   event.respondWith(
     caches.match(event.request).then(
       (hit) =>

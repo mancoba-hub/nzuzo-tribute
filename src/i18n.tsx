@@ -13,7 +13,7 @@ const STRINGS = {
     form: {
       title: "Send Your Tribute",
       name: "Your Name",
-      namePlaceholder: "e.g. Thandeka Mthembu",
+      namePlaceholder: "e.g. Brown Njemza",
       community: "Community / Organisation (optional)",
       communityPlaceholder: "e.g. Qeqe Community Development",
       contact: "Phone or Email (optional)",
@@ -54,7 +54,7 @@ const STRINGS = {
     form: {
       title: "Thumela Isikhumbuzo Sakho",
       name: "Igama Lakho",
-      namePlaceholder: "umz. uThandeka Mthembu",
+      namePlaceholder: "umz. uBrown Njemza",
       community: "Uluntu / Umbutho (ukuba uyafuna)",
       communityPlaceholder: "umz. IQeqe Community Development",
       contact: "Ifowuni okanye I-imeyile (ukuba uyafuna)",
