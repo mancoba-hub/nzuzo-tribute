@@ -162,6 +162,14 @@ export default function Admin() {
           <button type="button" className="btn-ghost" onClick={() => window.print()}>
             🖨 Print tribute booklet
           </button>
+          <a
+            className="btn-ghost"
+            href="#/slideshow"
+            target="_blank"
+            rel="noopener"
+          >
+            ▶ Play tribute slideshow
+          </a>
           <button type="button" className="btn-ghost" onClick={logout}>
             Log out
           </button>

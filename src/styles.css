@@ -411,6 +411,11 @@ body {
   border-color: var(--gold);
 }
 
+a.btn-ghost {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .wall-empty {
   text-align: center;
   color: var(--muted);
@@ -606,6 +611,228 @@ body {
   font-size: 11px;
   margin-left: 8px;
   vertical-align: middle;
+}
+
+/* ---- full-screen slideshow (funeral service) ---- */
+.slideshow {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #0a0e15;
+  background-image: radial-gradient(1100px 520px at 50% -8%, #1b2436 0%, rgba(27, 36, 54, 0) 60%);
+  background-repeat: no-repeat;
+  color: var(--text);
+}
+
+.slideshow-exit {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  background: rgba(22, 30, 43, 0.9);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.slideshow-exit:hover {
+  color: #fff;
+  border-color: var(--gold);
+}
+
+.slideshow-counter {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  z-index: 10;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.slideshow-slide {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 72px 26px 160px;
+  animation: slide-fade 0.9s ease both;
+}
+
+/* Keep the slide content centred when it fits, scrollable when it doesn't */
+.slideshow-slide::before,
+.slideshow-slide::after {
+  content: "";
+  margin: auto;
+}
+
+@keyframes slide-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.slideshow-photo {
+  max-height: 40vh;
+  max-width: 88%;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55);
+}
+
+.slideshow-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 5vw, 42px);
+  font-weight: 600;
+  margin: 10px 0 6px;
+  color: #fff;
+}
+
+.slideshow-meta {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  margin: 0 0 18px;
+}
+
+.slideshow-message {
+  max-width: 760px;
+  max-height: 32vh;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 3.4vw, 25px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.slideshow-verse {
+  font-style: italic;
+}
+
+.slideshow-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 18px 22px;
+  background: linear-gradient(rgba(10, 14, 21, 0), rgba(10, 14, 21, 0.92) 40%);
+}
+
+.slideshow-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  max-width: 100%;
+}
+
+.slideshow-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(154, 164, 178, 0.35);
+  cursor: pointer;
+}
+
+.slideshow-dot.active {
+  background: var(--gold-bright);
+}
+
+.slideshow-buttons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.slideshow-buttons button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.slideshow-buttons button:hover {
+  color: #fff;
+}
+
+.slideshow-buttons button.play {
+  color: var(--gold-bright);
+  border: 1px solid var(--border);
+  background: rgba(22, 30, 43, 0.8);
+  font-size: 18px;
+  padding: 8px 20px;
+}
+
+.slideshow-hint {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(154, 164, 178, 0.7);
+}
+
+.slideshow-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(212, 162, 78, 0.2);
+}
+
+.slideshow-progress > div {
+  height: 100%;
+  width: 0;
+  background: var(--gold);
+  animation: slideshow-fill linear forwards;
+}
+
+.slideshow-progress.paused > div {
+  animation-play-state: paused;
+}
+
+@keyframes slideshow-fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .slideshow-slide {
+    padding: 60px 18px 170px;
+  }
+
+  .slideshow-photo {
+    max-height: 32vh;
+  }
 }
 
 /* ---- print booklet ---- */

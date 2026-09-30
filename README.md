@@ -23,6 +23,7 @@ Available in **English** and **isiXhosa** (tap the 🌍 button top-right to swit
 - Download all tributes as **CSV**
 - Download all photos as a **ZIP** (to hand over on a USB or phone)
 - **Print a tribute booklet** to present to the family
+- **Play a full-screen slideshow** of the tributes during the funeral service
 
 ## Quick start (on this computer)
 
@@ -187,6 +188,12 @@ If you prefer a "real" server that never sleeps and never loses data:
 3. Review tributes — hide or delete anything that should not go to the family.
 4. Use **Download CSV** / **Download photos (ZIP)** to save everything for the handover.
 5. Use **Print tribute booklet**, then choose "Save as PDF" in the print dialog.
+6. Use **Play tribute slideshow** to open a full-screen slideshow in a new tab —
+   each tribute (with its photo) is shown one at a time and auto-advances every
+   9 seconds. Play it on a laptop, TV or projector throughout the funeral
+   service. It is also available directly at `/#/slideshow`, and can be
+   controlled with the on-screen buttons or the keyboard (space = pause,
+   arrow keys = change slide, Esc = exit).
 
 ## Customising
 

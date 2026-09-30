@@ -46,6 +46,17 @@ const STRINGS = {
       rest: "Rest in Peace, Dlamini.",
       admin: "Admin",
     },
+    slideshow: {
+      exit: "Exit",
+      play: "Play",
+      pause: "Pause",
+      prev: "Previous",
+      next: "Next",
+      loading: "Loading tributes…",
+      empty: "No tributes to display yet.",
+      error: "Could not load the tributes.",
+      hint: "Space to pause · arrow keys to change slide",
+    },
     langSwitch: "isiXhosa",
   },
   xh: {
@@ -91,6 +102,17 @@ const STRINGS = {
       rest: "Lala ngoxolo, Dlamini.",
       admin: "Admin",
     },
+    slideshow: {
+      exit: "Phuma",
+      play: "Qala",
+      pause: "Yima",
+      prev: "Eyadlulayo",
+      next: "Elandelayo",
+      loading: "Izikhumbuzo ziyalayishwa…",
+      empty: "Akukabikho zikhumbuzo okwangoku.",
+      error: "Asikwazanga ukulayisha izikhumbuzo.",
+      hint: "Cofa i-space ukuze ume · amaqhosha etolo ukutshintsha isilayidi",
+    },
     langSwitch: "English",
   },
 } as const;
@@ -118,7 +140,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
   }, [lang]);
 
   return (
-    <LangContext.Provider value={{ lang, t: STRINGS[lang], setLang: setLangState }}>
+    <LangContext.Provider value={{ lang, t: STRINGS[lang] as Strings, setLang: setLangState }}>
       {children}
     </LangContext.Provider>
   );

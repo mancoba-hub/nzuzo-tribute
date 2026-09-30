@@ -1,4 +1,3 @@
-import { TRIBUTE } from "../config";
 import { useLang } from "../i18n";
 
 export default function Footer() {

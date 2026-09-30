@@ -5,6 +5,7 @@ import TributeForm from "./components/TributeForm";
 import Wall from "./components/Wall";
 import Footer from "./components/Footer";
 import Admin from "./components/Admin";
+import Slideshow from "./components/Slideshow";
 
 function useHashRoute() {
   const [hash, setHash] = useState(window.location.hash);
@@ -52,11 +53,15 @@ export default function App() {
   const hash = useHashRoute();
   return (
     <LangProvider>
-      <div className="app">
-        <TopBar />
-        <LanguageToggle />
-        {hash.startsWith("#/admin") ? <Admin /> : <Home />}
-      </div>
+      {hash.startsWith("#/slideshow") ? (
+        <Slideshow />
+      ) : (
+        <div className="app">
+          <TopBar />
+          <LanguageToggle />
+          {hash.startsWith("#/admin") ? <Admin /> : <Home />}
+        </div>
+      )}
     </LangProvider>
   );
 }
