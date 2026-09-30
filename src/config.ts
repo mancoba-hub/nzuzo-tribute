@@ -6,7 +6,7 @@ export const TRIBUTE = {
   name: "Nzuzo Pukuza",
 
   /** Dates shown under the name, e.g. "12 March 1990 – 20 September 2026" */
-  dates: "",
+  dates: "1 April 1982 - 19 September 2026",
 
   /** Organising community / organisation */
   community: "Qeqe Community Development",
