@@ -24,6 +24,8 @@ Available in **English** and **isiXhosa** (tap the 🌍 button top-right to swit
 - Download all photos as a **ZIP** (to hand over on a USB or phone)
 - **Print a tribute booklet** to present to the family
 - **Play a full-screen slideshow** of the tributes during the funeral service
+- **Download an offline slideshow (HTML)** — a single file with all tributes and
+  photos embedded, so it can run on any laptop with no internet connection
 
 ## Quick start (on this computer)
 
@@ -194,6 +196,11 @@ If you prefer a "real" server that never sleeps and never loses data:
    service. It is also available directly at `/#/slideshow`, and can be
    controlled with the on-screen buttons or the keyboard (space = pause,
    arrow keys = change slide, Esc = exit).
+7. If the venue has no internet, use **Download offline slideshow (HTML)**
+   first. It saves one self-contained file (`nzuzo-tribute-slideshow.html`)
+   with all tributes and photos embedded — copy it to a USB stick, double-click
+   it on any laptop (no internet or server needed) and it plays the same
+   slideshow. Remember to download a fresh copy after new tributes arrive.
 
 ## Customising
 

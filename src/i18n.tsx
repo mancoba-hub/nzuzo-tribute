@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 export type Lang = "en" | "xh";
 
-const STRINGS = {
+export const STRINGS = {
   en: {
     topbar: "Qeqe Community Development",
     eyebrow: "In Loving Memory",

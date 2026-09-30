@@ -11,6 +11,7 @@ import {
   type Tribute,
 } from "../api";
 import { TRIBUTE } from "../config";
+import { buildOfflineSlideshow, downloadOfflineSlideshow } from "../exportSlideshow";
 
 function PrintSheet({ tributes }: { tributes: Tribute[] }) {
   const visible = tributes.filter((t) => !t.hidden);
@@ -43,6 +44,7 @@ export default function Admin() {
   const [token, setToken] = useState<string | null>(adminToken.get());
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
+  const [building, setBuilding] = useState(false);
   const [error, setError] = useState("");
   const [tributes, setTributes] = useState<Tribute[] | null>(null);
   const [filter, setFilter] = useState<"all" | "visible" | "hidden">("all");
@@ -108,6 +110,20 @@ export default function Admin() {
     }
   }
 
+  async function runOffline() {
+    if (!tributes) return;
+    setBuilding(true);
+    setError("");
+    try {
+      const blob = await buildOfflineSlideshow(tributes);
+      downloadOfflineSlideshow(blob);
+    } catch {
+      setError("Could not prepare the offline slideshow. Please try again.");
+    } finally {
+      setBuilding(false);
+    }
+  }
+
   if (!token) {
     return (
       <div className="container">
@@ -170,6 +186,9 @@ export default function Admin() {
           >
             ▶ Play tribute slideshow
           </a>
+          <button type="button" className="btn-ghost" onClick={runOffline} disabled={building}>
+            {building ? "⏳ Preparing offline slideshow…" : "⬇ Download offline slideshow (HTML)"}
+          </button>
           <button type="button" className="btn-ghost" onClick={logout}>
             Log out
           </button>
