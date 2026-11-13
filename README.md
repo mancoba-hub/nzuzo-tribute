@@ -212,8 +212,8 @@ and a closing blessing. It is ready to hand to a printer or to present to the fa
 To regenerate it after more tributes arrive:
 
 1. Download a fresh offline slideshow from the admin dashboard
-   (**Download offline slideshow (HTML)**) and replace
-   `nzuzo-tribute-slideshow.html` in the project root.
+   (**Download offline slideshow (HTML)**) and save it as
+   `booklet/nzuzo-tribute-slideshow.html` (or in the project root).
 2. Run:
    ```powershell
    node scripts/build-booklet.mjs

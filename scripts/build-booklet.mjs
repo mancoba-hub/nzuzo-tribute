@@ -17,7 +17,17 @@ const bookletDir = join(root, "booklet");
 const assetsDir = join(bookletDir, "assets");
 mkdirSync(assetsDir, { recursive: true });
 
-const slideshow = readFileSync(join(root, "nzuzo-tribute-slideshow.html"), "utf8");
+const slideshowCandidates = [
+  join(bookletDir, "nzuzo-tribute-slideshow.html"),
+  join(root, "nzuzo-tribute-slideshow.html"),
+];
+const slideshowPath = slideshowCandidates.find((candidate) => existsSync(candidate));
+if (!slideshowPath) {
+  throw new Error(
+    "Could not find nzuzo-tribute-slideshow.html in booklet/ or the project root.",
+  );
+}
+const slideshow = readFileSync(slideshowPath, "utf8");
 
 const dataMatch = slideshow.match(/var DATA = (\[[\s\S]*?\]);\s*var CONFIG/);
 if (!dataMatch) throw new Error("Could not find the DATA array in the slideshow file.");
@@ -206,10 +216,8 @@ const closing = `
     <h2 class="closing-xh">Phumla ngoxolo</h2>
     <p class="closing-en">Rest in peace</p>
     ${dividerSvg}
-    <blockquote class="closing-quote">
-      <p>Your journey on earth has ended, but your legacy of love, friendship and family will live on forever.</p>
-      <cite>Ludwe Mazimela</cite>
-    </blockquote>
+    <p class="closing-verse">“I am the resurrection and the life. The one who believes in me will live, even though they die.”</p>
+    <p class="closing-verse-ref">John 11:25</p>
     <p class="closing-line">Lala ngoxolo, Dlamini.</p>
     <p class="closing-note">With deepest sympathy and abiding love,<br><strong>${escapeHtml(COMMUNITY)}</strong></p>
   </div>
@@ -736,12 +744,8 @@ const css = `
 
   .closing-page .orn { margin: 9mm auto; }
 
-  .closing-quote {
-    margin: 0;
+  .closing-verse {
     max-width: 92mm;
-  }
-
-  .closing-quote p {
     font-family: var(--display);
     font-style: italic;
     font-size: 12pt;
@@ -749,15 +753,13 @@ const css = `
     color: var(--ink-soft);
   }
 
-  .closing-quote cite {
-    display: block;
-    margin-top: 4mm;
+  .closing-verse-ref {
     font-family: var(--sans);
-    font-style: normal;
     font-size: 7pt;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
+    margin-top: 3mm;
   }
 
   .closing-line {
