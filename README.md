@@ -202,6 +202,33 @@ If you prefer a "real" server that never sleeps and never loses data:
    it on any laptop (no internet or server needed) and it plays the same
    slideshow. Remember to download a fresh copy after new tributes arrive.
 
+## Printed tribute booklet (A5 PDF)
+
+A finished, print-ready booklet of all the tributes is included at
+`booklet/Nzuzo-Pukuza-Tribute-Booklet.pdf` — 28 A5 pages with a portrait cover,
+a dedication, a word from the community, one page per tribute (photos included),
+and a closing blessing. It is ready to hand to a printer or to present to the family.
+
+To regenerate it after more tributes arrive:
+
+1. Download a fresh offline slideshow from the admin dashboard
+   (**Download offline slideshow (HTML)**) and replace
+   `nzuzo-tribute-slideshow.html` in the project root.
+2. Run:
+   ```powershell
+   node scripts/build-booklet.mjs
+   ```
+   This rewrites `booklet/nzuzo-pukuza-tribute-booklet.html` and extracts any
+   new tribute photos into `booklet/assets/`.
+3. Open the HTML file in Chrome → **Print** → **Save as PDF**
+   (paper size A5, margins **None**, **Background graphics** on), and save over
+   `booklet/Nzuzo-Pukuza-Tribute-Booklet.pdf`.
+
+Printing tips: the booklet is 28 pages (a multiple of 4), so it can be
+saddle-stitched or folded. Print double-sided and flip on the **short edge**.
+The cover portrait is `booklet/assets/nzuzo-portrait.jpg`; tribute photos are
+the other files in the same folder.
+
 ## Customising
 
 | What                      | Where                          |
@@ -231,5 +258,6 @@ server/store.js    JSON file storage (data/tributes.json)
 server/auth.js     Admin login tokens
 src/               React frontend (Vite)
 public/            PWA manifest, service worker, icons
-scripts/           Icon generator
+scripts/           Icon generator and booklet builder
+booklet/           Printable A5 tribute booklet (PDF, HTML and photos)
 ```

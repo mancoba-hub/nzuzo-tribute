@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nzuzo Pukuza - A Book of Tributes</title>
+<meta name="author" content="Qeqe Community Development">
+<meta name="description" content="A collection of tributes in loving memory of Nzuzo Pukuza (1 April 1982 - 19 September 2026).">
+<style>
+  :root {
+    --paper: #fbf7ef;
+    --paper-deep: #f4ecdd;
+    --ink: #2b2723;
+    --ink-soft: #4c443a;
+    --muted: #7a6f5f;
+    --gold: #a98544;
+    --gold-soft: #c7ab74;
+    --gold-line: #ddcfae;
+    --serif: Georgia, "Times New Roman", serif;
+    --display: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --sans: "Segoe UI", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #e3dbcc;
+    color: var(--ink);
+  }
+
+  body {
+    font-family: var(--serif);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    size: 148mm 210mm;
+    margin: 0;
+  }
+
+  .page {
+    position: relative;
+    width: 148mm;
+    height: 210mm;
+    padding: 14mm 18mm 13mm;
+    background: var(--paper);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  @media screen {
+    body { padding: 12mm 0; }
+    .page {
+      margin: 0 auto 12mm;
+      box-shadow: 0 2mm 9mm rgba(55, 43, 25, 0.18);
+    }
+  }
+
+  p { margin: 0; }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 7.2pt;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .orn {
+    display: block;
+    width: 52mm;
+    height: auto;
+    margin: 0 auto;
+    color: var(--gold-soft);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 0.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .candle {
+    display: block;
+    width: 17mm;
+    height: auto;
+    margin: 0 auto;
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .candle .flame { fill: var(--gold-soft); stroke: var(--gold); }
+
+  .page-num {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6.5mm;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 7pt;
+    letter-spacing: 0.14em;
+    color: #b3a58d;
+  }
+
+  /* ---------- cover ---------- */
+
+  .cover {
+    padding: 0;
+    text-align: center;
+    background:
+      radial-gradient(120% 78% at 50% 0%, #fffdf7 0%, var(--paper) 52%, var(--paper-deep) 100%);
+  }
+
+  .frame {
+    position: absolute;
+    inset: 7mm;
+    border: 0.35mm solid var(--gold-soft);
+    pointer-events: none;
+  }
+
+  .frame::after {
+    content: "";
+    position: absolute;
+    inset: 1.7mm;
+    border: 0.15mm solid var(--gold-line);
+  }
+
+  .cover-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22mm 20mm 20mm;
+  }
+
+  .cover-eyebrow {
+    font-family: var(--sans);
+    font-size: 8pt;
+    letter-spacing: 0.44em;
+    text-transform: uppercase;
+    color: #8c7444;
+    margin-bottom: 9mm;
+  }
+
+  .portrait-wrap {
+    padding: 1.7mm;
+    border: 0.3mm solid var(--gold-soft);
+    border-radius: 31mm 31mm 2mm 2mm;
+    background: #fffdf8;
+    margin-bottom: 9mm;
+  }
+
+  .portrait-wrap img {
+    display: block;
+    width: 56mm;
+    height: 64mm;
+    object-fit: cover;
+    border-radius: 29.4mm 29.4mm 0.6mm 0.6mm;
+    filter: saturate(0.92) contrast(1.02);
+  }
+
+  .cover-name {
+    font-family: var(--display);
+    font-size: 31pt;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.045em;
+    color: #25221e;
+    margin: 0;
+  }
+
+  .cover-name span {
+    display: block;
+    margin-top: 2.4mm;
+    font-size: 21pt;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .cover-dates {
+    font-family: var(--sans);
+    font-size: 8.6pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 5mm;
+  }
+
+  .cover .orn { margin: 6.5mm auto; }
+
+  .cover-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 11.5pt;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+
+  .cover-foot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 11mm;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 7pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8c7444;
+  }
+
+  /* ---------- dedication ---------- */
+
+  .dedication {
+    text-align: center;
+    justify-content: flex-start;
+    padding-top: 20mm;
+  }
+
+  .dedication .candle { width: 16mm; margin-bottom: 8mm; }
+  .dedication .eyebrow { margin-bottom: 4mm; }
+
+  .dedication-name {
+    font-family: var(--display);
+    font-size: 22pt;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  .dedication-dates {
+    font-family: var(--sans);
+    font-size: 8pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3mm;
+  }
+
+  .dedication .orn { margin: 8mm auto 9mm; }
+
+  .verse {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 12.4pt;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 96mm;
+    margin: 0 auto;
+  }
+
+  .verse-xh { margin-top: 8mm; font-size: 11.6pt; }
+
+  .verse-ref {
+    font-family: var(--sans);
+    font-size: 7.4pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3mm;
+  }
+
+  .dedication-note {
+    max-width: 92mm;
+    margin: 13mm auto 0;
+    padding-top: 6mm;
+    border-top: 0.2mm solid var(--gold-line);
+    font-size: 9.6pt;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ---------- prose pages ---------- */
+
+  .prose-page { padding-top: 21mm; }
+
+  .page-title {
+    font-family: var(--display);
+    font-size: 21pt;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .page-kicker {
+    font-family: var(--sans);
+    font-size: 7.4pt;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3.5mm;
+  }
+
+  .title-rule {
+    width: 22mm;
+    border-top: 0.4mm solid var(--gold-soft);
+    margin: 6mm 0 7mm;
+  }
+
+  .prose-page p {
+    font-size: 10.2pt;
+    line-height: 1.72;
+    color: var(--ink-soft);
+    margin-bottom: 3.4mm;
+    text-align: left;
+  }
+
+  .prose-page .signature {
+    margin-top: 8mm;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 11.5pt;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .prose-page .signature span {
+    display: inline-block;
+    margin-top: 1mm;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 7.4pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .prose-page .small-note {
+    margin-top: 7mm;
+    padding-top: 5mm;
+    border-top: 0.2mm solid var(--gold-line);
+    font-size: 8.6pt;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* ---------- section divider ---------- */
+
+  .divider-page {
+    justify-content: center;
+    text-align: center;
+    background:
+      radial-gradient(90% 60% at 50% 45%, #fffdf7 0%, var(--paper) 62%, var(--paper-deep) 100%);
+  }
+
+  .divider-inner { margin-top: -8mm; }
+
+  .divider-title {
+    font-family: var(--display);
+    font-size: 34pt;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    margin: 5mm 0 0;
+  }
+
+  .divider-xh {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--gold);
+    margin-top: 2mm;
+  }
+
+  .divider-page .orn { margin: 9mm auto; width: 58mm; }
+
+  .divider-note {
+    font-family: var(--sans);
+    font-size: 7.6pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 2;
+    color: var(--muted);
+  }
+
+  /* ---------- tribute pages ---------- */
+
+  .tribute-page { padding-top: 11mm; }
+
+  .running-head {
+    font-family: var(--sans);
+    font-size: 6.6pt;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    padding-bottom: 3.5mm;
+    border-bottom: 0.2mm solid var(--gold-line);
+  }
+
+  .running-head span { color: var(--gold-soft); padding: 0 1.5mm; }
+
+  .tribute-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3mm 0 2mm;
+  }
+
+  .tribute-photo {
+    margin: 0 auto 4mm;
+    padding: 1.2mm;
+    background: #fffdf8;
+    border: 0.25mm solid var(--gold-line);
+    box-shadow: 0 1mm 3mm rgba(70, 52, 24, 0.1);
+  }
+
+  .tribute-photo img {
+    display: block;
+    max-width: 84mm;
+    max-height: 58mm;
+    object-fit: contain;
+  }
+
+  .tribute-photo.photo-small img { max-height: 40mm; }
+
+  .quote-mark {
+    font-family: var(--display);
+    font-size: 30pt;
+    line-height: 0.7;
+    color: var(--gold-soft);
+    height: 7mm;
+    text-align: left;
+  }
+
+  .message {
+    font-family: var(--serif);
+    font-size: var(--msg-size, 11.5pt);
+    line-height: 1.68;
+    color: var(--ink);
+    white-space: pre-line;
+    overflow-wrap: break-word;
+  }
+
+  .message-short { text-align: center; }
+
+  .quote-mark-center { text-align: center; }
+
+  .message-with-photo { font-size: var(--msg-size, 10pt); }
+
+  .attribution {
+    text-align: center;
+    padding-bottom: 8mm;
+  }
+
+  .att-rule {
+    width: 15mm;
+    border-top: 0.35mm solid var(--gold-soft);
+    margin: 0 auto 3.5mm;
+  }
+
+  .att-name {
+    font-family: var(--display);
+    font-size: 14.5pt;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .att-meta {
+    font-family: var(--sans);
+    font-size: 6.8pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2mm;
+  }
+
+  /* ---------- closing ---------- */
+
+  .closing-page {
+    text-align: center;
+    padding-top: 24mm;
+  }
+
+  .closing-page .candle { width: 15mm; margin-bottom: 9mm; }
+
+  .closing-inner { display: flex; flex-direction: column; align-items: center; }
+
+  .closing-xh {
+    font-family: var(--display);
+    font-size: 25pt;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .closing-en {
+    font-family: var(--sans);
+    font-size: 7.6pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 3mm;
+  }
+
+  .closing-page .orn { margin: 9mm auto; }
+
+  .closing-quote {
+    margin: 0;
+    max-width: 92mm;
+  }
+
+  .closing-quote p {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 12pt;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .closing-quote cite {
+    display: block;
+    margin-top: 4mm;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 7pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .closing-line {
+    font-family: var(--display);
+    font-size: 15pt;
+    color: var(--ink);
+    margin-top: 12mm;
+  }
+
+  .closing-note {
+    font-size: 9.4pt;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-top: 15mm;
+  }
+
+  .closing-note strong {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 7.4pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ---------- back cover ---------- */
+
+  .back-cover { justify-content: center; }
+
+  .back-inner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8mm;
+  }
+
+  .back-inner .candle { width: 14mm; margin-bottom: 11mm; }
+
+  .back-name {
+    font-family: var(--display);
+    font-size: 25pt;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+
+  .back-dates {
+    font-family: var(--sans);
+    font-size: 8pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3.5mm;
+  }
+
+  .back-inner .orn { margin: 9mm auto; }
+
+  .back-rest {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15pt;
+    color: var(--gold);
+  }
+
+  .back-rest-en {
+    font-family: var(--sans);
+    font-size: 7.2pt;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2.5mm;
+  }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="frame"></div>
+  <div class="cover-inner">
+    <p class="cover-eyebrow">In Loving Memory</p>
+    <div class="portrait-wrap"><img src="assets/nzuzo-portrait.jpg" alt="Portrait of Nzuzo Pukuza"></div>
+    <h1 class="cover-name">Nzuzo<span>Pukuza</span></h1>
+    <p class="cover-dates">1 April 1982 - 19 September 2026</p>
+    <svg class="orn" viewBox="0 0 140 14" aria-hidden="true"><path d="M0 7h50M90 7h50"/><path d="M70 1.8 75.2 7 70 12.2 64.8 7z"/><circle cx="57" cy="7" r="1.1"/><circle cx="83" cy="7" r="1.1"/></svg>
+    <p class="cover-sub">Tributes from family, friends<br>and the Qeqe Community</p>
+  </div>
+  <p class="cover-foot">Qeqe Community Development</p>
+</section>
+
+<section class="page dedication">
+  <svg class="candle" viewBox="0 0 64 88" aria-hidden="true"><path class="flame" d="M32 5c4.4 5.8 7 9.8 7 13.4a7 7 0 0 1-14 0C25 14.8 27.6 10.8 32 5z"/><path d="M32 26v6"/><path d="M20 32h24v39a5 5 0 0 1-5 5H25a5 5 0 0 1-5-5z"/><path d="M20 38c4.5 0 7 2.2 12 2.2S39.5 38 44 38"/><ellipse cx="32" cy="80" rx="17" ry="3.4"/></svg>
+  <p class="eyebrow">In Loving Memory</p>
+  <h2 class="dedication-name">Nzuzo Pukuza</h2>
+  <p class="dedication-dates">1 April 1982 - 19 September 2026</p>
+  <svg class="orn" viewBox="0 0 140 14" aria-hidden="true"><path d="M0 7h50M90 7h50"/><path d="M70 1.8 75.2 7 70 12.2 64.8 7z"/><circle cx="57" cy="7" r="1.1"/><circle cx="83" cy="7" r="1.1"/></svg>
+  <p class="verse">“I am the resurrection and the life. The one who believes in me will live, even though they die.”</p>
+  <p class="verse-ref">John 11:25</p>
+  <p class="verse verse-xh">“Ndim uvuko, ndim ubomi; okholwayo kum, nokuba uthe wafa, uya kudla ubomi.”</p>
+  <p class="verse-ref">Yohane 11:25</p>
+  <p class="dedication-note">This book gathers the tributes shared by family, friends and the Qeqe community, and is presented to the Pukuza family in love and remembrance.</p>
+  <div class="page-num">1</div>
+</section>
+
+<section class="page prose-page">
+  <h2 class="page-title">A Word from the Community</h2>
+  <p class="page-kicker">Qeqe Community Development</p>
+  <div class="title-rule"></div>
+  <p>When word reached us that Nzuzo had passed, messages began to arrive from every corner - from Bangweni and Qeqe, from friends met at university, from neighbours and from colleagues near and far. Each message carried the same thread: a generous heart, a warm laugh, and a man who gave quietly and never counted the cost.</p>
+  <p>In these pages he is called by many names - Dlamini, Zizi, Njokweni, Makhwabe, Mchana - each one a sign of belonging, each one spoken with love.</p>
+  <p>This booklet gathers those messages exactly as they were written. They come from different hands and different voices, in English and in isiXhosa, yet they speak as one: of kindness that lifted others, of a cheerleader who rejoiced in the success of his community, and of a presence that will be deeply missed.</p>
+  <p>We hope that in the days and years ahead, these words will remind you of how widely Nzuzo was loved, and of the light he brought into the lives around him.</p>
+  <p class="signature">Enkosi. Thank you.<br><span>Qeqe Community Development</span></p>
+  <div class="page-num">2</div>
+</section>
+
+<section class="page divider-page">
+  <div class="divider-inner">
+    <p class="eyebrow">Messages of Love and Remembrance</p>
+    <h2 class="divider-title">Tributes</h2>
+    <p class="divider-xh">Izikhumbuzo</p>
+    <svg class="orn" viewBox="0 0 140 14" aria-hidden="true"><path d="M0 7h50M90 7h50"/><path d="M70 1.8 75.2 7 70 12.2 64.8 7z"/><circle cx="57" cy="7" r="1.1"/><circle cx="83" cy="7" r="1.1"/></svg>
+    <p class="divider-note">From the family, friends and community<br>of Nzuzo Pukuza</p>
+  </div>
+  <div class="page-num">3</div>
+</section>
+
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:11.3pt">Heartfelt Condolences to the Pukuza family, friends, Colleagues and Qeqe community at large. We know that God called and Nzuzo responded. He will never ever make a mistake. It is our time now to continue with the journey of developing our communities. Rest in peace Zizi you will always be remembered by all of us in our community development initiatives., MYSRIP….</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Khaya Mabaleka</p>
+    <p class="att-meta">29 September 2026</p>
+  </div>
+  <div class="page-num">4</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark quote-mark-center" aria-hidden="true">“</div>
+    <p class="message message-short" style="--msg-size:12.4pt">Ndimkhumbula ngothanda uhleka Nzuzo. Ndimazi through mutual friends uLiso no Mcd as abakhaya bakhe. Wonderful guy he was.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Owen Mngenelwa</p>
+    <p class="att-meta">29 September 2026</p>
+  </div>
+  <div class="page-num">5</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark quote-mark-center" aria-hidden="true">“</div>
+    <p class="message message-short" style="--msg-size:12.4pt">Usizimele  singalindelanga Dlamini, Sifunde lukhulu kuwe Ukuzithanda, Imfundo, Imbeko komncinci nomdala. Phumla Njokweni🕊️🕊️🕊️</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Tembaletu Jonga</p>
+    <p class="att-meta">Qeqe Community Development · 29 September 2026</p>
+  </div>
+  <div class="page-num">6</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:12.0pt">Thixo usohlute wena sisakubuka futi sijonge lukhulu kuwe kwi development yelali. May the Lord welcome you with both hands. Ngxe Dlamini. May your handsome soul rest in peace. OoNgcuthigala bakwamkele kwelolizwe. Uze uncede ukhusele uTata wakho, uncede ungamlibali tu. Ukhusele Family yako yonke.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Yolisa sogayise</p>
+    <p class="att-meta">Qeqe community development · 29 September 2026</p>
+  </div>
+  <div class="page-num">7</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:12.0pt">Phumla ngoxolo Makhwabe, usikhuthazile ukuba sibe ngaba nontente singabo namhlanje. Sakuqhubekeka nayo apho uyishiye khona sikhuthaze, sifundise abeza emva kwethu njengokoko wenza njalo nawe kuthi. RIP Njokweni</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Obie Barah Mhambi</p>
+    <p class="att-meta">Qeqe Community · 29 September 2026</p>
+  </div>
+  <div class="page-num">8</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:10.7pt">Dlamini! Sifuna ukudlulisa uvelwano olunzulu nelikhulu nelibuhlungu kusapho lo-Dlamini ngeli xesha linzima kakhulu emveni kokulahlekelwa ngunyana walo uNzunzo Pukuza. Siyabuva ubuhlungu benu kwaye sikhumbula nina ezintliziyweni zethu, sinethemba lokuba nizakufumana uthando, amandla, kunye nentuthuzelo njengoko nidlula kwesi sizungu sokulahlekelwa. Kwanga iinkumbulo ezintle ngonyana wenu zinganinika uxolo, namandla okunyamezela kule mihla izayo. Khumbulani, aninakude nibe nodwa-uluntu lwenu lusecaleni kwenu. 🕊️🤍🙏</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Mandulo Mbiza</p>
+    <p class="att-meta">Qeqe community · 29 September 2026</p>
+  </div>
+  <div class="page-num">9</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:12.4pt">I am so sorry for your loss. I am thinking of you and your family during this difficult time wanga ungaphumla  kakuhle  Njokweni. 🕊️🕊️🕊️🕊️</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Zolani Siguba</p>
+    <p class="att-meta">29 September 2026</p>
+  </div>
+  <div class="page-num">10</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark quote-mark-center" aria-hidden="true">“</div>
+    <p class="message message-short" style="--msg-size:12.4pt">You left us by surprise Dlamini. Inene isitya esihle asidleli...I pray for peace and strength for your family at this difficult time.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Ayanda Mniki</p>
+    <p class="att-meta">29 September 2026</p>
+  </div>
+  <div class="page-num">11</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark quote-mark-center" aria-hidden="true">“</div>
+    <p class="message message-short" style="--msg-size:12.4pt">Heartfelt condolences to the family and friends, stay strong and keep well. RIP Makhwabe 🕊️🕊️🕊️</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Ayanda Siguba</p>
+    <p class="att-meta">Qeqe Community Development · 29 September 2026</p>
+  </div>
+  <div class="page-num">12</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:12.0pt">Dlamini! Your kindness, your presence and your commitment to our community touched more lives than you will ever know. We are heartbroken to lose you, yet grateful for every moment we shared. Your spirit will live on in the community you loved and served. Rest in peace, brother. Until we meet again.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Liso Mbiza</p>
+    <p class="att-meta">Qeqe Community Development (Legends) · 29 September 2026</p>
+  </div>
+  <div class="page-num">13</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:12.0pt">Nzuzo, this has come as a shock that you have transcended and are nolonger with us. Thank you for your kindness, always a joy to be around you. You were one of a kind man. Phumla ngoxolo mhlobam.🤍</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Gando Stenge-Balfour</p>
+    <p class="att-meta">Varsity friend · 30 September 2026</p>
+  </div>
+  <div class="page-num">14</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:12.0pt">&quot;Short lives can leave the longest marks. Yours left an unending mark on everyone that new you.&quot;
+May all your families and friends find comfort during this time, your memory will live on Dlamini, you were an example and inspiration to many.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Kuhle Siguba-Vanda (Madlamini)</p>
+    <p class="att-meta">Qeqe · 30 September 2026</p>
+  </div>
+  <div class="page-num">15</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:11.3pt">Ukuba ubuyazile uba uyahamba ngalamzuzu I am deeply sure ngowubacengile wabaxelela your responsibility &quot;utata wam&quot; umhlekazi. 
+
+Rest in Peace ke bhuti 😭. Thank you for allowing us to share your parents , your updates and respect.  Isitya esihle asidleli. 
+Isiquququ,intonga yesekhosi kayise,.  Ndingabalisa nale yokuya ePasikeni uyokusiphekisa xa kupheka iLower section in the name of your parents.  
+
+RIP bhuti  sonakele</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Pam Zihlangu</p>
+    <p class="att-meta">Bangweni · 30 September 2026</p>
+  </div>
+  <div class="page-num">16</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:10.7pt">Gone too soon
+You were a great cheerleader in the true sense. You really loved ukubona abantu bephumelela and ungonqeni ukuxhasa where you see a good cause. I remember your huge financial contribution to Sakhikamva Development Foundation and you wanted no recognition, just wanted to support behind the scenes, siyabulela Dlamini. Our Foundation imile and getting huge sponsorship but you planted the seed whe we had nothing. 
+Last time sonwabile nawe was 19-20 July 2025 emgidini wonyana wam, apho sasicula ingoma zecawa kwasa phandle, little did I know it&#39;s our last happy moment.  Rest in eternal peace Mchana, forever in our hearts 🙏</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">MAKHI ZIHLANGU</p>
+    <p class="att-meta">Bangweni · 30 September 2026</p>
+  </div>
+  <div class="page-num">17</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    <figure class="tribute-photo photo-small"><img src="assets/tribute-7-Ludwe-Mazimela.jpg" alt="Photograph shared by Ludwe Mazimela"></figure>
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message message-with-photo" style="--msg-size:9.3pt">We mourn the loss of a remarkable soul, a dear friend, a devoted father, and a beloved brother. Words cannot fully express the sadness that fills our hearts as we say goodbye.
+
+As a friend, you brought laughter, kindness, and unwavering support to those fortunate enough to know you.
+
+Your presence touched many lives, and the impact you made will continue to be felt for years to come. Though you may no longer walk beside us, your spirit, wisdom, and love will remain forever in our hearts.
+
+May your family find comfort in the wonderful memories you created, strength in the love that surrounds them, and peace in knowing that you will never be forgotten.
+
+Rest in peace Dlamini, my friend. Your journey on earth has ended, but your legacy of love, friendship, and family will live on forever.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Ludwe Mazimela</p>
+    <p class="att-meta">Bangweni · 30 September 2026</p>
+  </div>
+  <div class="page-num">18</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    <figure class="tribute-photo"><img src="assets/tribute-8-Asipe-ndikinda.jpg" alt="Photograph shared by Asipe ndikinda"></figure>
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message message-with-photo" style="--msg-size:11.1pt">A heart of gold stopped beating,Working hands at rest , God broke our hearts to prove to us ,He only takes the best ,Leaves and flowers may wither ,The golden sun may set , But the hearts that loved you dearly , Are the ones that won’t forget. Rest easy Dlamini 🕊️</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Asipe ndikinda</p>
+    <p class="att-meta">Bangweni · 30 September 2026</p>
+  </div>
+  <div class="page-num">19</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    <figure class="tribute-photo"><img src="assets/tribute-9-Liso-Mbiza.jpg" alt="Photograph shared by Liso Mbiza"></figure>
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message message-with-photo" style="--msg-size:11.1pt">Ngenxa yongakholelwa into endiyivayo Dlamini ngalontseni yova ezindaba zimbi, I went and checked your WhatsApp status. Ndibone your last few pictures ozithathe lamini. Ulale ngoxolo mfowethu</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Liso Mbiza</p>
+    <p class="att-meta">Qeqe Community Development (Legends) · 30 September 2026</p>
+  </div>
+  <div class="page-num">20</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:11.3pt">Xa abashumayeli bethetha uba into ezelwe ngu mfazi imihla yayo mifutshane kuzoko kuthethwa into enje, usizimele Njokweni sisakubuka. Uthando osinikeze lona asisoze silulibale, ubukho bakho nakwintoni na eyenziwayo bebubonakala. Kusapho nezalamene ngxee uThixo anomeleze ngeli xesha lobunzima. Hamba ke Njokweni uyophumla umsebenzi ebekunike wona uBawo uwugqibile umphefumlo wakho uphumle ngoxolo.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Nolizwi Mhambi</p>
+    <p class="att-meta">30 September 2026</p>
+  </div>
+  <div class="page-num">21</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark" aria-hidden="true">“</div>
+    <p class="message" style="--msg-size:11.3pt">To a life well lived, a life with full of kindness, love and faith.
+
+You were the gift to us. Your laughter, your  wisdom, your jokes will live on forever in our hearts.
+Pumla ngoxolo Nzuzman
+We will not say good bye but see you later
+
+Matthew 25 :23 (Well done good and faithful servant. You have been faithful. Come and share your masters happiness)
+REST  Njonkweni.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Nokulunga Siguba</p>
+    <p class="att-meta">Qeqe Community development · 30 September 2026</p>
+  </div>
+  <div class="page-num">22</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark quote-mark-center" aria-hidden="true">“</div>
+    <p class="message message-short" style="--msg-size:12.4pt">Gone too soon.
+
+Rest in peace Dlamini. 
+
+Condolences to the family</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Somz</p>
+    <p class="att-meta">2 October 2026</p>
+  </div>
+  <div class="page-num">23</div>
+</section>
+<section class="page tribute-page">
+  <p class="running-head">Nzuzo Pukuza <span>·</span> In Loving Memory</p>
+  <div class="tribute-inner">
+    
+    <div class="quote-mark quote-mark-center" aria-hidden="true">“</div>
+    <p class="message message-short" style="--msg-size:12.4pt">May  GOD comfort you in this darkest hour.May Zizi&#39;s soul rest in peace.
+
+Condolences to the family.</p>
+  </div>
+  <div class="attribution">
+    <div class="att-rule"></div>
+    <p class="att-name">Avela Ngcwangu</p>
+    <p class="att-meta">Family Friend · 2 October 2026</p>
+  </div>
+  <div class="page-num">24</div>
+</section>
+
+<section class="page prose-page">
+  <h2 class="page-title">With Gratitude</h2>
+  <p class="page-kicker">Qeqe Community Development</p>
+  <div class="title-rule"></div>
+  <p>This booklet was compiled from the tributes received through the online memorial page for Nzuzo Pukuza, between 29 September and 2 October 2026.</p>
+  <p>Our thanks go to every person who took the time to write - for the memories shared, the comfort offered, and the love poured into each message.</p>
+  <p>To the Pukuza family: may these words carry you in the days ahead, and may Nzuzo’s memory remain a blessing to you always.</p>
+  <p class="small-note">The messages are reproduced as they were received, in the language in which they were written. Names appear as their authors signed them.</p>
+  <p class="signature">Qeqe Community Development</p>
+  <div class="page-num">25</div>
+</section>
+
+<section class="page closing-page">
+  <svg class="candle" viewBox="0 0 64 88" aria-hidden="true"><path class="flame" d="M32 5c4.4 5.8 7 9.8 7 13.4a7 7 0 0 1-14 0C25 14.8 27.6 10.8 32 5z"/><path d="M32 26v6"/><path d="M20 32h24v39a5 5 0 0 1-5 5H25a5 5 0 0 1-5-5z"/><path d="M20 38c4.5 0 7 2.2 12 2.2S39.5 38 44 38"/><ellipse cx="32" cy="80" rx="17" ry="3.4"/></svg>
+  <div class="closing-inner">
+    <h2 class="closing-xh">Phumla ngoxolo</h2>
+    <p class="closing-en">Rest in peace</p>
+    <svg class="orn" viewBox="0 0 140 14" aria-hidden="true"><path d="M0 7h50M90 7h50"/><path d="M70 1.8 75.2 7 70 12.2 64.8 7z"/><circle cx="57" cy="7" r="1.1"/><circle cx="83" cy="7" r="1.1"/></svg>
+    <blockquote class="closing-quote">
+      <p>Your journey on earth has ended, but your legacy of love, friendship and family will live on forever.</p>
+      <cite>Ludwe Mazimela</cite>
+    </blockquote>
+    <p class="closing-line">Lala ngoxolo, Dlamini.</p>
+    <p class="closing-note">With deepest sympathy and abiding love,<br><strong>Qeqe Community Development</strong></p>
+  </div>
+  <div class="page-num">26</div>
+</section>
+
+<section class="page cover back-cover">
+  <div class="frame"></div>
+  <div class="back-inner">
+    <svg class="candle" viewBox="0 0 64 88" aria-hidden="true"><path class="flame" d="M32 5c4.4 5.8 7 9.8 7 13.4a7 7 0 0 1-14 0C25 14.8 27.6 10.8 32 5z"/><path d="M32 26v6"/><path d="M20 32h24v39a5 5 0 0 1-5 5H25a5 5 0 0 1-5-5z"/><path d="M20 38c4.5 0 7 2.2 12 2.2S39.5 38 44 38"/><ellipse cx="32" cy="80" rx="17" ry="3.4"/></svg>
+    <p class="back-name">Nzuzo Pukuza</p>
+    <p class="back-dates">1 April 1982 - 19 September 2026</p>
+    <svg class="orn" viewBox="0 0 140 14" aria-hidden="true"><path d="M0 7h50M90 7h50"/><path d="M70 1.8 75.2 7 70 12.2 64.8 7z"/><circle cx="57" cy="7" r="1.1"/><circle cx="83" cy="7" r="1.1"/></svg>
+    <p class="back-rest">Phumla ngoxolo</p>
+    <p class="back-rest-en">Rest in peace</p>
+  </div>
+  <p class="cover-foot">Qeqe Community Development</p>
+</section>
+</body>
+</html>
